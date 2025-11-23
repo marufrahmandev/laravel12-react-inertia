@@ -12,4 +12,6 @@
 9. php artisan migrate:refresh --seed
 10. php artisan make:controller ProjectController --model=Project --requests --resource
 11. php artisan make:controller TaskController --model=Task --requests --resource
+12. php artisan make:resource ProjectResource
+13. php artisan make:resource TaskResource
 ```
