@@ -23,7 +23,7 @@ class TaskFactory extends Factory
             'due_date' => fake()->dateTimeBetween('now', '+1 year'),
             'status' => fake()->randomElement(['pending', 'in_progress', 'completed']),
             'priority' => fake()->randomElement(['low', 'medium', 'high']),
-            'image_path' => fake()->imageUrl(),
+            'image_path' => 'https://picsum.photos/300/200?random=' . fake()->unique()->numberBetween(1, 9999),
             'assigned_user_id' => 1,
             'created_by' => 1,
             'updated_by' => 1,

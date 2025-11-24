@@ -14,4 +14,5 @@
 11. php artisan make:controller TaskController --model=Task --requests --resource
 12. php artisan make:resource ProjectResource
 13. php artisan make:resource TaskResource
+14. npm install @heroicons/react -S
 ```

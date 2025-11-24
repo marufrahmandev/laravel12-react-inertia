@@ -1,12 +1,25 @@
 import { Link } from "@inertiajs/react";
 
-export default function Pagination({ links }) {
+export default function Pagination({ links, queryParams }) {
+  let extraQuery = new URLSearchParams();
+  if(queryParams?.status){
+    extraQuery.append("status", queryParams.status);
+  }
+  if(queryParams?.name){
+    extraQuery.append("name", queryParams.name);
+  }
+  if(queryParams?.sort_field){
+    extraQuery.append("sort_field", queryParams.sort_field);
+  }
+  if(queryParams?.sort_direction){
+    extraQuery.append("sort_direction", queryParams.sort_direction);
+  }
   return (
     <nav className="text-center mt-4">
       {links.map((link) => (
         <Link
           preserveScroll
-          href={link.url || ""}
+          href={(link.url? (link.url + "&" +  extraQuery.toString()): "")}
           key={link.label}
           className={
             "inline-block py-2 px-3 rounded-lg text-gray-200 text-xs " +
