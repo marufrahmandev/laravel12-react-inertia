@@ -8,6 +8,9 @@ export default function Pagination({ links, queryParams }) {
   if(queryParams?.name){
     extraQuery.append("name", queryParams.name);
   }
+   if(queryParams?.email){
+    extraQuery.append("email", queryParams.email);
+  }
   if(queryParams?.sort_field){
     extraQuery.append("sort_field", queryParams.sort_field);
   }
